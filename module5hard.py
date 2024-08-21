@@ -4,10 +4,8 @@ import time
 class User :
     def __init__(self, nickname, password, age):
         self.nickname = nickname
-        self.password = password
+        self.password =  hash(password) 
         self.age = age
-    def __hash__(self):
-        return hash(self.password)
     def __eq__(self, other):
         return self.nickname == other.nickname
     def __str__(self):
